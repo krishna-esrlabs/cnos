@@ -3,7 +3,7 @@ defaults:
   - machine: local
   - callback: base 
   - data: bop
-  - model: cnos
+  - model: cnos_mobile
   - _self_
 
 save_dir: ${machine.root_dir}/results/${name_exp}

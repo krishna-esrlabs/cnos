@@ -91,7 +91,7 @@ def run_inference(template_dir, rgb_path, num_max_dets, conf_threshold, stabilit
         model.segmentor_model.predictor.model = (
             model.segmentor_model.predictor.model.to(device)
         )
-    else:
+    elif hasattr(model.segmentor_model, "model"):
         model.segmentor_model.model.setup_model(device=device, verbose=True)
     logging.info(f"Moving models to {device} done!")
         
@@ -147,11 +147,11 @@ def run_inference(template_dir, rgb_path, num_max_dets, conf_threshold, stabilit
     detections.to_numpy()
     save_path = f"{template_dir}/cnos_results/detection"
     detections.save_to_file(0, 0, 0, save_path, "custom", return_results=False)
-    detections = convert_npz_to_json(idx=0, list_npz_paths=[save_path+".npz"])
+    detections, _ = convert_npz_to_json(idx=0, list_npz_paths=[save_path+".npz"])
     save_json_bop23(save_path+".json", detections)
     vis_img = visualize(rgb, detections)
     vis_img.save(f"{template_dir}/cnos_results/vis.png")
-    
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--template_dir", nargs="?", help="Path to root directory of the template")

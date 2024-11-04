@@ -1,0 +1,5 @@
+_target_: src.model.mobilesam.MobileSAM
+checkpoint_path: "path_to_mobile_sam.pt"
+segmentor_width_size: ${model.segmentor_width_size}
+stability_score_thresh: 0.97
+device: cuda
