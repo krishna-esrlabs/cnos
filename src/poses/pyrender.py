@@ -101,7 +101,7 @@ if __name__ == "__main__":
     re_center_transform[:3, 3] = -mesh.bounding_box.centroid
     print(f"Object center at {mesh.bounding_box.centroid}")
 
-    diameter = get_obj_diameter(mesh)
+    diameter = get_obj_diameter(args.cad_path)
     if not is_hot3d and diameter > 100: # object is in mm
         mesh.apply_scale(0.001)
 
