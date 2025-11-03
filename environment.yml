@@ -1,4 +1,4 @@
-name: cnos
+name: cnos_sam2
 channels:
   - xformers
   - pytorch
@@ -7,7 +7,7 @@ channels:
   - defaults
 dependencies:
   - pip
-  - python=3.9.6
+  - python=3.11
   - pip:
     - numpy==1.26.4
     - torch
@@ -16,7 +16,7 @@ dependencies:
     - torchmetrics==0.10.3
     - fvcore
     - iopath
-    - xformers==0.0.18
+    - xformers
     - opencv-python 
     - pycocotools 
     - matplotlib 
@@ -33,5 +33,5 @@ dependencies:
     - pyrender
     - wandb
     - distinctipy
-    - git+https://github.com/facebookresearch/hand_tracking_toolkit.git
+#    - git+https://github.com/facebookresearch/hand_tracking_toolkit.git
 # bop https://github.com/thodan/bop_toolkit.git

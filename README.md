@@ -69,6 +69,9 @@ pip install git+https://github.com/facebookresearch/segment-anything.git
 
 # for using fastSAM
 pip install ultralytics==8.0.135
+
+# for using SAM2
+pip install git+https://github.com/facebookresearch/sam2.git
 ```
 
 ### 2. Datasets and model weights

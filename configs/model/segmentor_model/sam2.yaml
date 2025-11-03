@@ -1,0 +1,5 @@
+_target_: src.model.sam2.SAM2Simple
+checkpoint_dir: "path_to_the_checkpoint_dir"
+model_type: hiera_l
+device: cuda
+segmentor_width_size: ${model.segmentor_width_size}
